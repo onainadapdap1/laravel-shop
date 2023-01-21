@@ -1,70 +1,73 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
-    <!-- Container wrapper -->
-    <div class="container">
-      <!-- Toggle button -->
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-mdb-toggle="collapse"
-        data-mdb-target="#navbarSupportedContent1"
-        aria-controls="navbarSupportedContent1"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <i class="fas fa-bars"></i>
-      </button>
+ <!-- Navbar -->
+ <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+     <div class="container">
 
-      <!-- Collapsible wrapper -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent1">
-        <!-- Navbar brand -->
-        <a class="navbar-brand mt-2 mt-sm-0" href="https://mdbootstrap.com/">
-          <img
-            src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
-            height="20"
-            alt="MDB Logo"
-            loading="lazy"
-          />
-        </a>
-        <!-- Left links -->
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item active">
-            <a class="nav-link " href="https://mdbootstrap.com/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://mdbootstrap.com/docs/standard/">About MDB</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://mdbootstrap.com/docs/standard/getting-started/installation/">Free download</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://mdbootstrap.com/education/bootstrap/">Free tutorials</a>
-          </li>
-        </ul>
-        <!-- Left links -->
-      </div>
-      <!-- Collapsible wrapper -->
+         <!-- Brand -->
+         <a class="navbar-brand waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
+             <strong class="blue-text">MDB</strong>
+         </a>
 
-      <!-- Right elements -->
-      <div class="d-flex align-items-center">
-        <!-- Icon -->
-        <a class="nav-link me-3" href="#">
-          <i class="fas fa-shopping-cart"></i>
-          <span class="badge rounded-pill badge-notification bg-danger">1</span>
-        </a>
+         <!-- Collapse -->
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+             <span class="navbar-toggler-icon"></span>
+         </button>
 
-        <a class="nav-link me-3" href="#">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a class="nav-link me-3" href="#">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="border rounded px-2 nav-link"
-                target="_blank">
-                <i class="fab fa-github me-2"></i>MDB GitHub
-              </a>
-      </div>
-      <!-- Right elements -->
+         <!-- Links -->
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-    </div>
-    <!-- Container wrapper -->
-  </nav>
+             <!-- Left -->
+             <ul class="navbar-nav mr-auto">
+                 <li class="nav-item active">
+                     <a class="nav-link waves-effect" href="#">Home
+                         <span class="sr-only">(current)</span>
+                     </a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">About
+                         MDB</a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link waves-effect"
+                         href="https://mdbootstrap.com/docs/jquery/getting-started/download/" target="_blank">Free
+                         download</a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/"
+                         target="_blank">Free
+                         tutorials</a>
+                 </li>
+             </ul>
+
+             <!-- Right -->
+             <ul class="navbar-nav nav-flex-icons">
+                 <li class="nav-item">
+                     <a class="nav-link waves-effect">
+                         <span class="badge red z-depth-1 mr-1"> 1 </span>
+                         <i class="fas fa-shopping-cart"></i>
+                         <span class="clearfix d-none d-sm-inline-block"> Cart </span>
+                     </a>
+                 </li>
+                 <li class="nav-item">
+                     <a href="https://www.facebook.com/mdbootstrap" class="nav-link waves-effect" target="_blank">
+                         <i class="fab fa-facebook-f"></i>
+                     </a>
+                 </li>
+                 <li class="nav-item">
+                     <a href="https://twitter.com/MDBootstrap" class="nav-link waves-effect" target="_blank">
+                         <i class="fab fa-twitter"></i>
+                     </a>
+                 </li>
+                 <li class="nav-item">
+                     <a href="https://github.com/mdbootstrap/bootstrap-material-design"
+                         class="nav-link border border-light rounded waves-effect" target="_blank">
+                         <i class="fab fa-github mr-2"></i>MDB GitHub
+                     </a>
+                 </li>
+             </ul>
+
+         </div>
+
+     </div>
+ </nav>
+ <!-- Navbar -->
