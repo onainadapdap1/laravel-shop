@@ -36,9 +36,13 @@ class LoginController extends Controller
         if(Auth::user()->role_as == "admin") {
             return "dashboard";
             // return redirect('/dashboard')->with('status', 'You are succesfully login');
-        } else {
-            return "home";
         }
+
+        if(Auth::user()->role_as == "vendor") {
+            return "vendor-dashboard";
+        }
+
+        return "home";
     }
 
     // public function redirectPath()

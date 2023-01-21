@@ -27,3 +27,9 @@ Route::group(['middleware' => ['auth', 'isAdmin']], function () {
         return view("admin.dashboard");
     });
 });
+
+Route::group(['middleware' => ['auth', 'isVendor']], function () {
+    Route::get('/vendor-dashboard', function () {
+        return view("vendor.vendor-dashboard");
+    });
+});
