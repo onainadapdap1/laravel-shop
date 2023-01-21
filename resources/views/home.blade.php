@@ -2,10 +2,10 @@
 
 @section('content')
 <section class="top-section">
-<div class="container">
+{{-- <div class="container">
     @if (session()->has('message')) <div class="alert alert-success">{!! session('message') !!}</div>
-@endif
-    {{-- <div class="row justify-content-center">
+@endif --}}
+    <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
@@ -21,7 +21,7 @@
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
 </div>
 </section>
 @endsection

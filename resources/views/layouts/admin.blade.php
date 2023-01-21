@@ -86,7 +86,9 @@
             @yield('content')
         </main>
 
-        @include('layouts.inc.adminfooter')
+        <footer class="page-footer text-center font-small primary-color-dark darken-2 mt-4 wow fadeIn">
+            @include('layouts.inc.adminfooter')
+        </footer>
     </div>
     <script type="text/javascript" src="{{ asset('assets/js/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/popper.min.js') }}"></script>

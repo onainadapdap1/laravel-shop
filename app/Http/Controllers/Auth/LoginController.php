@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -29,17 +30,25 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    // protected $redirectTo = RouteServiceProvider::HOME;
 
-
-    public function redirectPath()
-    {
-        // Do your logic to flash data to session...
-        session()->flash('message', 'Successfully login');
-
-        // Return the results of the method we are overriding that we aliased.
-        return $this->laravelRedirectPath();
+    public function redirectTo() {
+        if(Auth::user()->role_as == "admin") {
+            return "dashboard";
+            // return redirect('/dashboard')->with('status', 'You are succesfully login');
+        } else {
+            return "home";
+        }
     }
+
+    // public function redirectPath()
+    // {
+    //     // Do your logic to flash data to session...
+    //     session()->flash('message', 'Successfully login');
+
+    //     // Return the results of the method we are overriding that we aliased.
+    //     return $this->laravelRedirectPath();
+    // }
 
     /**
      * The user has been authenticated.
