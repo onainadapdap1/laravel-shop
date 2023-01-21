@@ -1,6 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.frontend')
 
 @section('content')
+
+<section style="padding-top: 84px;">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -74,4 +76,6 @@
         </div>
     </div>
 </div>
+</section>
+
 @endsection

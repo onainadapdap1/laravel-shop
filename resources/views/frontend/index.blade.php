@@ -5,6 +5,14 @@
 @endsection
 
 @section('content')
+
+    {{-- <div class="container mt-5">
+        @if (session()->has('flash_notification.success'))
+        <div class="alert alert-success">{!! session('flash_notification.success') !!}</div>
+    @endif
+    </div> --}}
+
+
     @include('frontend.slider.slider')
 
     <section class="py-4">

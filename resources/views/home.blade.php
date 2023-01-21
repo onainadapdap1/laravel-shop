@@ -1,8 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.frontend')
 
 @section('content')
+<section class="top-section">
 <div class="container">
-    <div class="row justify-content-center">
+    @if (session()->has('message')) <div class="alert alert-success">{!! session('message') !!}</div>
+@endif
+    {{-- <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
@@ -18,6 +21,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 </div>
+</section>
 @endsection
