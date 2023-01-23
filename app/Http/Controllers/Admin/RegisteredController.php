@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class RegisteredController extends Controller
 {
     public function index() {
-        $users = User::all();
+        $users = User::paginate(2);
         return view('admin.users.index')->with('users', $users);
     }
     public function edit($id) {
