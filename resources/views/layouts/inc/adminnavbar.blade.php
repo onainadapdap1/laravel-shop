@@ -52,10 +52,27 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="https://github.com/mdbootstrap/bootstrap-material-design"
-                        class="nav-link border border-light rounded waves-effect" target="_blank">
+                    {{-- <a href="https://github.com/mdbootstrap/bootstrap-material-design"
+                        class="" target="_blank">
                         <i class="fab fa-github mr-2"></i>MDB GitHub
-                    </a>
+                    </a> --}}
+                    <div class="dropdown">
+                        <button class="nav-link border border-light rounded waves-effect dropdown-toggle" type="button"
+                            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ Auth::User()->name }}
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <a class="dropdown-item" href="#">My Profile</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </ul>
+                    </div>
                 </li>
             </ul>
 
