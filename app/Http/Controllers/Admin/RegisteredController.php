@@ -20,8 +20,9 @@ class RegisteredController extends Controller
         $user = User::find($id);
         $user->name = $request->input('name');
         $user->role_as = $request->input('roles');
+        $user->isban = $request->input('isban');
         $user->update();
 
-        return redirect()->back()->with('status', 'Role is successfully updated'); 
+        return redirect()->back()->with('status', 'Role is successfully updated');
     }
 }

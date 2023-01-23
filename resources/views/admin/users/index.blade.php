@@ -27,6 +27,7 @@
                                 <th>Id</th>
                                 <th>Name</th>
                                 <th>Email</th>
+                                <th class="text-center">IsBan/UnBan</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -37,6 +38,13 @@
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->email }}</td>
                                     <td>{{ $item->role_as }}</td>
+                                    <td>
+                                        @if ($item->isban == '0')
+                                            <label class="py-2 px-3 badge btn-primary">Not banned</label>
+                                        @elseif($item->isban == '1')
+                                            <label class="py-2 px-3 badge btn-danger">Banned</label>
+                                        @endif
+                                    </td>
                                     <td>
                                         <a href="{{ url('role-edit/' . $item->id) }}" class="badge badge-pill btn-primary px-3 py-2">Edit</a>
                                         <a href="" class="badge badge-pill btn-danger  px-3 py-2">Delete</a>

@@ -19,22 +19,25 @@ class UserSeeder extends Seeder
         // insert data table users
         $users = [
             [
-                'name' => 'Onai Nadapdap',
-                'email' => 'onainadapdap@gmail.com',
-                'password' => bcrypt('sidapdap'),
-                'role_as' => 'user'
-            ],
-            [
                 'name' => 'Jevania Datubara',
                 'email' => 'jevaniadatubara@gmail.com',
                 'password' => bcrypt('password'),
-                'role_as' => 'admin'
+                'role_as' => 'admin',
+                'isban' => 0
+            ],
+            [
+                'name' => 'Onai Nadapdap',
+                'email' => 'onainadapdap@gmail.com',
+                'password' => bcrypt('sidapdap'),
+                'role_as' => 'user',
+                'isban' => 0
             ],
             [
                 'name' => 'vendor',
                 'email' => 'vendor@gmail.com',
                 'password' => bcrypt('password'),
-                'role_as' => 'vendor'
+                'role_as' => 'vendor',
+                'isban' => 0
             ]
         ];
 
