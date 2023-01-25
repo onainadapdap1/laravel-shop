@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\RegisteredController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +24,8 @@ Auth::routes();
 
 Route::group(['middleware' => ['auth', 'isUser']], function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/my-profile', [UserController::class, 'myprofile']);
+    Route::post('/my-profile-update', [UserController::class, 'profileupdate']);
 });
 
 Route::group(['middleware' => ['auth', 'isAdmin']], function () {
