@@ -18,6 +18,35 @@
         <!-- Heading -->
 
         <div class="row">
+            {{-- filtering data --}}
+            <div class="col-md-6">
+                <form action="{{ url('registered-user') }}" method="GET">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <select name="roles" class="form-control">
+                                    @if (isset($_GET['roles']))
+                                        <option value="{{ $_GET['roles'] }}">{{ $_GET['roles'] }}</option>
+                                        <option value="all">All</option>
+                                        <option value="user">User</option>
+                                        <option value="admin">Admin</option>
+                                        <option value="vendor">Vendor</option>
+                                    @else
+                                        <option value="all">All</option>
+                                        <option value="user">User</option>
+                                        <option value="admin">Admin</option>
+                                        <option value="vendor">Vendor</option>
+                                    @endif
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <button type="submit" class="btn btn-primary py-2">Filter</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            {{-- end filtering data --}}
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
@@ -65,7 +94,7 @@
                             </tbody>
                         </table>
                         <div class="d-flex justify-content-center">
-                            {!! $users->links() !!}
+                            {{-- {!! $users->links() !!} --}}
                         </div>
                     </div>
                 </div>
