@@ -1,6 +1,7 @@
 @extends('layouts.frontend')
 
 @section('content')
+<section style="padding-top: 84px;">
 <section class="top-section">
 {{-- <div class="container">
     @if (session()->has('message')) <div class="alert alert-success">{!! session('message') !!}</div>

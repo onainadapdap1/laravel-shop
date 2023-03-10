@@ -20,7 +20,7 @@
             <div class="row">
                 <!--Grid column-->
                 @for ($i = 1; $i < 5; $i++)
-                    <div class="col-md-3 col-6 mt-3">
+                    <div class="col-md-6 col-6 mt-3">
 
                         <!--Card-->
                         <div class="card">
