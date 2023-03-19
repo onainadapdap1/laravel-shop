@@ -55,7 +55,13 @@
                                                         <input type="number" class="qty-input form-control" value="1" min="1" max="100">
                                                     </div>
                                                     <div class="col-md-6 col-6">
+                                                        {{-- <button type="button" class="add-to-cart-btn btn btn-success m-0 py-2 px-3">Add to cart</button> --}}
+                                                        @auth
                                                         <button type="button" class="add-to-cart-btn btn btn-success m-0 py-2 px-3">Add to cart</button>
+                                                        @else
+                                                        {{-- <a href="#" data-bs-toggle="modal" data-bs-target="#LoginModal" class="btn btn-success btn-block checkout-btn">Add to cart</a> --}}
+                                                        <a href="#" class=" btn btn-success m-0 py-2 px-3" href="#" data-bs-toggle="modal" data-bs-target="#LoginModal">Add to cart</a>
+                                                        @endauth
                                                     </div>
                                                 </div>
                                             </div>

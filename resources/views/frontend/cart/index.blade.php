@@ -141,7 +141,7 @@
                                                                 class="btn btn-success btn-block checkout-btn">PROCCED TO
                                                                 CHECKOUT</a>
                                                         @else
-                                                            <a href="{{ url('login') }}"
+                                                            <a href="#" data-bs-toggle="modal" data-bs-target="#LoginModal"
                                                                 class="btn btn-success btn-block checkout-btn">PROCCED TO
                                                                 CHECKOUT</a>
                                                             {{-- you add a pop modal for making a login --}}
