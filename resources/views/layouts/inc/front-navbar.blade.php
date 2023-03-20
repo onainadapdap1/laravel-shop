@@ -46,7 +46,7 @@
                         <!-- Right -->
                         <ul class="navbar-nav nav-flex-icons">
                             <li class="nav-item">
-                                <a class="nav-link waves-effect">
+                                <a href="/cart" class="nav-link waves-effect">
                                     <i class="fas fa-shopping-cart"></i>
                                     {{-- <span class="clearfix d-none d-sm-inline-block"> Cart </span> --}}
                                     {{-- akan di update ketika load ajax --}}

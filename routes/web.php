@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\RegisteredController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\CollectionController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\ProductController;
@@ -47,6 +48,7 @@ Route::group(['middleware' => ['auth', 'isUser']], function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/my-profile', [UserController::class, 'myprofile']);
     Route::post('/my-profile-update', [UserController::class, 'profileupdate']);
+    Route::get('/checkout', [CheckoutController::class, 'index']);
 });
 
 Route::group(['middleware' => ['auth', 'isAdmin']], function () {
