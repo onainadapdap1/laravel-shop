@@ -16,4 +16,9 @@ class CheckoutController extends Controller
             ->with('cart_data', $cart_data)
         ;
     }
+    public function storeorder(Request $request) {
+        if(isset($_POST['place_order_btn'])) {
+            return "I am here";
+        }
+    }
 }

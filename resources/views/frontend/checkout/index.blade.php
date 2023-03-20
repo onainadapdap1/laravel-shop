@@ -21,6 +21,7 @@
             <div class="row">
                 <div class="col-md-7">
                     <form action="{{ url('place-order') }}" method="POST"></form>
+                    @csrf
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -59,19 +60,19 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="">City</label>
-                                <input type="text" name="city" class="form-control" placeholder="City">
+                                <input type="number" name="city" class="form-control" placeholder="City">
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="">State</label>
-                                <input type="text" name="state" class="form-control" placeholder="State">
+                                <input type="number" name="state" class="form-control" placeholder="State">
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="">Pin code </label>
-                                <input type="text" name="phone_no" class="form-control" placeholder="Pincode">
+                                <input type="number" name="phone_no" class="form-control" placeholder="Pincode">
                             </div>
                         </div>
                         <div class="col-md-12">
