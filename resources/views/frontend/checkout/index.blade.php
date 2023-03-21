@@ -20,65 +20,69 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-7">
-                    <form action="{{ url('place-order') }}" method="POST"></form>
-                    @csrf
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="">First Name</label>
-                                <input type="text" name="first_name" class="form-control" placeholder="First Name">
+                    <form action="{{ url('place-order') }}" method="POST">
+                        @csrf
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">First Name</label>
+                                    <input type="text" name="first_name" class="form-control" value="{{ Auth::user()->name }}" placeholder="First Name">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Last Name</label>
+                                    <input type="text" name="last_name" class="form-control" value="{{ Auth::user()->lname }}" placeholder="Last Name">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Phone Number</label>
+                                    <input type="text" name="phone_no" class="form-control" value="{{ Auth::user()->phoneno }}" placeholder="Phone Number">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Alternate Phone Number</label>
+                                    <input type="text" name="alternate_no" value="{{ Auth::user()->alternate_no }}" class="form-control"
+                                        placeholder="Alternate Phone Number">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="">Address 1</label>
+                                    <input type="text" name="address1" class="form-control" value="{{ Auth::user()->address1 }}" placeholder="No #2. Flat no">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Address 2</label>
+                                    <input type="text" name="address2" class="form-control" value="{{ Auth::user()->address2 }}"
+                                        placeholder="Church street, POST">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="">City</label>
+                                    <input type="text" name="city" class="form-control" value="{{ Auth::user()->city }}" placeholder="City">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="">State</label>
+                                    <input type="text" name="state" class="form-control" value="{{ Auth::user()->state }}" placeholder="State">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="">Pin code </label>
+                                    <input type="number" name="pincode" class="form-control" value="{{ Auth::user()->pincode }}" placeholder="Pincode">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <button type="submit" name="place_order_btn" class="btn btn-primary">Place Your
+                                    Order</button>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="">Last Name</label>
-                                <input type="text" name="last_name" class="form-control" placeholder="Last Name">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="">Phone Number</label>
-                                <input type="text" name="phone_no" class="form-control" placeholder="Phone Number">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="">Alternate Phone Number</label>
-                                <input type="text" name="alternate_no" class="form-control" placeholder="Alternate Phone Number">
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="">Address 1</label>
-                                <input type="text" name="address1" class="form-control" placeholder="No #2. Flat no">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Address 2</label>
-                                <input type="text" name="address2" class="form-control" placeholder="Church street, POST">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="">City</label>
-                                <input type="number" name="city" class="form-control" placeholder="City">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="">State</label>
-                                <input type="number" name="state" class="form-control" placeholder="State">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="">Pin code </label>
-                                <input type="number" name="phone_no" class="form-control" placeholder="Pincode">
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <button type="submit" name="place_order_btn" class="btn btn-primary">Place Your Order</button>
-                        </div>
-                    </div>
+                    </form>
                 </div>
                 <div class="col-md-5">
                     @if (isset($cart_data))
@@ -95,18 +99,18 @@
                             </thead>
                             <tbody>
                                 @foreach ($cart_data as $data)
-                                <tr>
-                                    <td>{{ $data['item_name'] }}</td>
-                                    <td>{{ number_format($data['item_price'], 2) }}</td>
-                                    <td>{{ $data['item_quantity'] }}</td>
-                                    @php $total = $total + ($data["item_quantity"] * $data["item_price"]) @endphp
-                                </tr>
+                                    <tr>
+                                        <td>{{ $data['item_name'] }}</td>
+                                        <td>{{ number_format($data['item_price'], 2) }}</td>
+                                        <td>{{ $data['item_quantity'] }}</td>
+                                        @php $total = $total + ($data["item_quantity"] * $data["item_price"]) @endphp
+                                    </tr>
                                 @endforeach
                             </tbody>
                         </table>
                         <hr>
                         <div class="text-right">
-                            <h5>Grand Total: {{ number_format($total , 0)}}</h5>
+                            <h5>Grand Total: {{ number_format($total, 0) }}</h5>
                         </div>
                     @else
                         <div class="row">

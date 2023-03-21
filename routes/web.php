@@ -49,7 +49,7 @@ Route::group(['middleware' => ['auth', 'isUser']], function () {
     Route::get('/my-profile', [UserController::class, 'myprofile']);
     Route::post('/my-profile-update', [UserController::class, 'profileupdate']);
     Route::get('/checkout', [CheckoutController::class, 'index']);
-    Route::post('/place-order', [CheckoutController::class, 'storeorder'])
+    Route::post('place-order', [CheckoutController::class, 'storeorder']);
 });
 
 Route::group(['middleware' => ['auth', 'isAdmin']], function () {
